@@ -21,14 +21,19 @@ function createBoxes() {
   destroyBoxes();
 
   let size = 30;
+
+  const fragment = document.createDocumentFragment();
+
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
     box.style.width = `${size}px`;
     box.style.height = `${size}px`;
     box.style.backgroundColor = getRandomHexColor();
-    boxesDiv.appendChild(box);
+    fragment.appendChild(box);
     size += 10;
   }
+
+  boxesDiv.appendChild(fragment);
 
   input.value = "";
 }
